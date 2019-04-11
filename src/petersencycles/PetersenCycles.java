@@ -18,6 +18,7 @@ public class PetersenCycles {
      */
     public static void main(String[] args) {
         Graph petersen = new PetersenGraph();
+        System.out.println("Cycles in a Petersen graph are:");
         petersen.printCycles();
     }
     
