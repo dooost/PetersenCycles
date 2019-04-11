@@ -40,6 +40,8 @@ public class UndirectedGraph extends Graph {
         findCyclesFromPath(path);
     }
 
+    // This method implements DFS, by finding a neighbor of the current node,
+    // and recursively calling itself with the neighbor inserted as last node.
     @Override
     void findCyclesFromPath(List<Integer> path) {
         int node = path.get(path.size() - 1);
