@@ -46,20 +46,24 @@ public abstract class Graph {
         }
     }
     
+    // Adds a new vertex with no edges connected.
+    public void addVertex(int x) {
+        if (!hasVertex(x)) {
+            vertices.add(x);
+        }
+    }
+    
     // Adds an edge. Adds the vertex as well if they are missing.
     public abstract void addEdge(int x, int y);
     
-    // Adds a new vertex with no edges connected.
-    public abstract void addVertex(int x);
-    
     // Finds cycles starting from a given vertex
-    public abstract void findCyclesFromVertex(int x);
+    abstract void findCyclesFromVertex(int x);
     
     // Finds cycles continuing from a path
-    public abstract void findCyclesFromPath(List<Integer> path);
+    abstract void findCyclesFromPath(List<Integer> path);
     
     // Finds all cycles
-    public abstract void findAllCycles();
+    abstract void findAllCycles();
     
     
     

@@ -32,23 +32,16 @@ public class UndirectedGraph extends Graph {
             vertices.add(y);
         }
     }
-
+    
     @Override
-    public void addVertex(int x) {
-        if (!hasVertex(x)) {
-            vertices.add(x);
-        }
-    }
-
-    @Override
-    public void findCyclesFromVertex(int x) {
+    void findCyclesFromVertex(int x) {
         List<Integer> path = new ArrayList<>();
         path.add(x);
         findCyclesFromPath(path);
     }
 
     @Override
-    public void findCyclesFromPath(List<Integer> path) {
+    void findCyclesFromPath(List<Integer> path) {
         int node = path.get(path.size() - 1);
         
         // We go through all the edges, to find which edges include our current node
@@ -86,7 +79,7 @@ public class UndirectedGraph extends Graph {
     }
     
     @Override
-    public void findAllCycles() {
+    void findAllCycles() {
         for (int vertex : vertices) {
             findCyclesFromVertex(vertex);
         }
